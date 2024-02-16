@@ -101,7 +101,7 @@
                 </a>
               </div>
             {% when 'custom_text' %}
-              <div>
+              <div class="js-custom-fields">
                 <label class="quantity__label form__label" for="custom-text-{{ section.id }}">
                   Type your message:
                 </label>
@@ -114,11 +114,6 @@
                   </label>
                   <input form="{{ product_form_id }}" class="js-custom-img" type="file" id="custom-image-{{ section.id }}" name="properties[custom-image]">
                 </div>
-              </div>
-              <div>
-                <button class="custom-fields-button js-custom-fields-btn">
-                  Clear fields
-                </button>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
