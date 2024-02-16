@@ -100,6 +100,26 @@
                   </h2>
                 </a>
               </div>
+            {% when 'custom_text' %}
+              <div>
+                <label class="quantity__label form__label" for="custom-text-{{ section.id }}">
+                  Type your message:
+                </label>
+                <input form="{{ product_form_id }}" class="js-custom-txt" type="text" id="custom-text-{{ section.id }}" name="properties[Your name]">
+              </div>
+              <div>
+                <div>
+                  <label class="quantity__label form__label" for="custom-image-{{ section.id }}">
+                    Upload your file:
+                  </label>
+                  <input form="{{ product_form_id }}" class="js-custom-img" type="file" id="custom-image-{{ section.id }}" name="properties[custom-image]">
+                </div>
+              </div>
+              <div>
+                <button class="custom-fields-button js-custom-fields-btn">
+                  Clear fields
+                </button>
+              </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
@@ -713,6 +733,16 @@
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
         }
       ]
+    },
+    {
+      "type": "custom_text",
+      "name": "custom_text",
+      "limit": 1
+    },
+    {
+      "type": "custom_image",
+      "name": "custom_image",
+      "limit": 1
     },
     {
       "type": "title",
